@@ -19,7 +19,7 @@ namespace MyShop.Core.Models
         public string Price { get; set; }
         public string Category { get; set; }
         public string Image { get; set; }
-
+        
 
         public Product() 
         { 
