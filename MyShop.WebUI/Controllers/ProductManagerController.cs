@@ -98,7 +98,7 @@ namespace MyShop.WebUI.Controllers
         {
             Product productToDelete = context.Find(Id);
 
-            if(productToDelete != null)
+            if(productToDelete == null)
             {
                 return HttpNotFound();
             }
@@ -114,7 +114,7 @@ namespace MyShop.WebUI.Controllers
         {
             Product productToDelete = context.Find(Id);
 
-            if (productToDelete != null)
+            if (productToDelete == null)
             {
                 return HttpNotFound();
             }
