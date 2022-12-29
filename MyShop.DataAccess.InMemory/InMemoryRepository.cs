@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace MyShop.DataAccess.InMemory
 {
-    public class IRepository<T> : Core.Contracts.IRepository<T> where T : BaseEntity
+    public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
         List<T> items;
         string className;
 
-        public IRepository()
+        public InMemoryRepository()
         {
             className = typeof(T).Name;
             items = cache[className] as List<T>;
