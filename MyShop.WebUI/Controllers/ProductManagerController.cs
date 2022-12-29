@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
+using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.Core.ViewModels;
 using MyShop.DataAccess.InMemory;
@@ -13,13 +14,13 @@ namespace MyShop.WebUI.Controllers
     public class ProductManagerController : Controller
     {
 
-        InMemoryRepository<Product> context;
-        InMemoryRepository<ProductCategory> productCategories;
+        Core.Contracts.IRepository<Product> context;
+        Core.Contracts.IRepository<ProductCategory> productCategories;
 
-        public ProductManagerController()
+        public ProductManagerController(Core.Contracts.IRepository<Product> productContext, Core.Contracts.IRepository<ProductCategory> productCategoryContext)
         {
-            context = new InMemoryRepository<Product>();
-            productCategories = new InMemoryRepository<ProductCategory>();
+            context = productContext;
+            productCategories = productCategoryContext;
         }
 
         // GET: ProductManager
