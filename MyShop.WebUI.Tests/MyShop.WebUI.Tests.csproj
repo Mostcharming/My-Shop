@@ -99,6 +99,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyShop.Core\MyShop.Core.csproj">
+      <Project>{03FF2366-56A0-46A0-A770-3CFE04EF5F54}</Project>
+      <Name>MyShop.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyShop.WebUI\MyShop.WebUI.csproj">
       <Project>{387F36DD-C30D-41DA-A7C8-A085F63309A9}</Project>
       <Name>MyShop.WebUI</Name>
